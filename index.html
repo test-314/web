@@ -1,223 +1,31 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algebra 101 | Md Amir Hamza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --glass: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.12);
-      --accent: #60a5fa;
-      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Hind Siliguri', sans-serif;
-      background: var(--bg-gradient);
-      color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .phone-wrapper {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(15, 23, 42, 0.95);
-      border-radius: 32px;
-      border: 6px solid #334155;
-      overflow: hidden;
-      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-section { width: 100%; height: 260px; overflow: hidden; }
-    .hero-section img { width: 100%; height: 100%; object-fit: cover; }
-
-    .content-body { padding: 22px 20px 24px; }
-
-    .card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 18px;
-      margin-bottom: 18px;
-      backdrop-filter: blur(10px);
-    }
-
-    .pricing-row { display: flex; justify-content: space-between; align-items: center; }
-    .price-tag { font-size: 28px; font-weight: 700; color: var(--accent); }
-    .meta-small { font-size: 12px; color: #94a3b8; }
-    .feature-pill {
-      display: inline-block;
-      background: rgba(96, 165, 250, 0.15);
-      color: var(--accent);
-      padding: 5px 10px;
-      border-radius: 100px;
-      font-size: 12px;
-      margin-left: 5px;
-    }
-
-    .mentor-badge { display: flex; align-items: center; gap: 14px; }
-    .mentor-box {
-      width: 70px; height: 70px; border-radius: 18px;
-      display: flex; justify-content: center; align-items: center;
-      background: rgba(96, 165, 250, 0.15);
-      border: 1px solid var(--glass-border);
-      color: var(--accent); font-size: 26px; font-weight: 700;
-    }
-    .mentor-info p { font-size: 12px; color: #cbd5e1; text-transform: uppercase; }
-    .mentor-info h3 { font-size: 16px; font-weight: 600; margin-top: 3px; }
-
-    .quote-box {
-      font-size: 14px; line-height: 1.7; color: #cbd5e1;
-      border-left: 3px solid var(--accent); padding-left: 14px; font-style: italic;
-    }
-
-    .btn-enroll {
-      display: block; width: 100%; text-align: center; text-decoration: none;
-      background: #2563eb; color: #fff; padding: 16px; border-radius: 16px;
-      font-weight: 700; box-shadow: 0 12px 25px -8px rgba(37,99,235,0.5);
-      transition: all 0.3s; margin-top: 4px; cursor: pointer;
-    }
-    .btn-enroll:hover { background: #1d4ed8; transform: scale(1.03); }
-
-    .social-section { text-align: center; margin-top: 28px; color: #94a3b8; font-size: 13px; }
-    .social-footer {
-      display: flex; justify-content: space-around; align-items: center;
-      background: rgba(0,0,0,0.2); padding: 16px; border-top: 1px solid var(--glass-border);
-    }
-    .channel-logo {
-      width: 54px; height: 54px; border-radius: 50%;
-      object-fit: cover; border: 1px solid var(--glass-border);
-      transition: transform 0.3s ease;
-    }
-    .channel-logo:hover { transform: translateY(-6px); }
-
-    .copyright {
-      text-align: center; padding: 12px; font-size: 12px;
-      color: #64748b; background: rgba(0,0,0,0.15);
-      border-top: 1px solid var(--glass-border);
-    }
-
-    /* Modal Styles */
-    .modal {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex; justify-content: center; align-items: center;
-      visibility: hidden; opacity: 0; transition: 0.3s;
-    }
-    .modal.active { visibility: visible; opacity: 1; }
-
-    .modal-box {
-      background: rgba(30,41,59,0.95);
-      border: 1px solid var(--glass-border);
-      border-radius: 18px;
-      padding: 24px 20px;
-      width: 80%;
-      max-width: 320px;
-      text-align: center;
-      color: #f8fafc;
-      backdrop-filter: blur(10px);
-      animation: fadeIn 0.4s ease;
-    }
-    .modal-box h3 { font-size: 16px; color: var(--accent); margin-bottom: 10px; }
-    .close-btn {
-      position: absolute;
-      top: 12px; right: 16px;
-      color: #94a3b8; font-size: 20px; cursor: pointer;
-      transition: color 0.2s;
-    }
-    .close-btn:hover { color: var(--accent); }
-    @keyframes fadeIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-    @media (max-width: 380px) {
-      .hero-section { height: 220px; }
-      .price-tag { font-size: 24px; }
-      .mentor-box { width: 60px; height: 60px; font-size: 20px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duck’s Mathematics × প্রমাণ করো যে... | Home</title>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<div class="phone-wrapper">
-  <div class="hero-section">
-    <img src="https://i.ibb.co/hFrcjm6c/Algebra-101-20260221-152222-0000-page-0001.jpg" alt="Algebra 101 Banner">
-  </div>
+  <nav class="nav-bar">
+    <a href="index.html" class="active">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="updates.html">Updates</a>
+  </nav>
 
-  <div class="content-body">
-    <div class="card">
-      <div class="pricing-row">
-        <div>
-          <div class="price-tag">985/-</div>
-          <div class="meta-small">One-time Enrollment</div>
-        </div>
-        <div style="text-align: right;">
-          <div style="font-weight:600;">18 Lectures</div>
-          <div style="margin-top:8px;">
-            <span class="feature-pill">Premium Notes</span>
-            <span class="feature-pill">Lecture Sheets</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="logo-row">
+    <img src="https://i.ibb.co/GQ53vT1q/In-Shot-20260218-143854844.png" alt="Duck's Mathematics" class="logo">
+    <img src="https://i.ibb.co/XrsTgBtr/In-Shot-20260218-150023809.png" alt="প্রমাণ করো যে..." class="logo">
+  </section>
 
-    <div class="card mentor-badge">
-      <div class="mentor-box">Σ</div>
-      <div class="mentor-info">
-        <p>Mentor</p>
-        <h3>Md Amir Hamza</h3>
-      </div>
-    </div>
+  <section class="intro">
+    <h1>Duck’s Mathematics × প্রমাণ করো যে...</h1>
+    <p>একটি যৌথ উদ্যোগ যেখানে গণিত ও বিজ্ঞানের চিন্তাধারাকে নতুনভাবে উপস্থাপন করা হবে।</p>
+    <a href="courses.html" class="btn-enroll">Explore Courses →</a>
+  </section>
 
-    <div class="card">
-      <p class="quote-box">
-        "যারা বীজগণিতের প্রাথমিক ধারণাগুলোকে বুঝতে চান তাদের জন্যই এই ক্ষুদ্র উদ্যোগ। এখানে সূত্র নয়, চিন্তার সৌন্দর্যই হবে মূল আলোচ্য। ভালো থাকুন। বীজগণিতের পথে আপনার যাত্রা শুভ হোক!" — মোঃ আমির হামজা
-      </p>
-    </div>
-
-    <button class="btn-enroll" id="enrollBtn">ENROLL NOW</button>
-
-    <div class="social-section">
-      <p>A Course By:</p>
-    </div>
-
-    <div class="social-footer">
-      <a href="https://youtube.com/@ducksmathematics?si=sz1PviU0RWnw8YpL" target="_blank" rel="noopener">
-        <img src="https://i.ibb.co/GQ53vT1q/In-Shot-20260218-143854844.png" alt="Duck's Mathematics" class="channel-logo">
-      </a>
-      <a href="https://youtube.com/@promankoroje?si=oXLyw_gVi6ar9TTB" target="_blank" rel="noopener">
-        <img src="https://i.ibb.co/XrsTgBtr/In-Shot-20260218-150023809.png" alt="প্রমাণ করো যে..." class="channel-logo">
-      </a>
-    </div>
-
-    <div class="copyright">
-      © Duck's Mathematics × প্রমাণ করো যে...
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal" id="enrollModal">
-  <div class="modal-box">
-    <span class="close-btn" id="closeModal">&times;</span>
-    <h3>New Batch Coming Soon!</h3>
-    <p>Enrollment will open very soon, In Sha Allah 💫</p>
-  </div>
-</div>
-
-<script>
-  const enrollBtn = document.getElementById('enrollBtn');
-  const modal = document.getElementById('enrollModal');
-  const closeModal = document.getElementById('closeModal');
-
-  enrollBtn.addEventListener('click', () => modal.classList.add('active'));
-  closeModal.addEventListener('click', () => modal.classList.remove('active'));
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-</script>
+  <footer class="footer">
+    <p>© 2026 Duck’s Mathematics × প্রমাণ করো যে...</p>
+  </footer>
 </body>
 </html>
