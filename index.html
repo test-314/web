@@ -1,35 +1,68 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Scholarship Result 2025 - CHHATAK-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duck’s Mathematics × প্রমাণ করো যে... | Home</title>
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="nav-bar">
-    <a href="index.html" class="active">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-  </nav>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <h1>Duck’s Mathematics × প্রমাণ করো যে...</h1>
-    <p>একটি যৌথ উদ্যোগ যেখানে গণিত ও বিজ্ঞানের চিন্তাধারাকে নতুনভাবে উপস্থাপন করা হবে।</p>
-    <a href="courses.html" class="btn-enroll">Explore Courses →</a>
-  </section>
+<div class="container">
+  <h1>Junior Scholarship Result 2025</h1>
+  <p>Center: 477 - CHHATAK-1</p>
 
-  <!-- Logos Below Intro -->
-  <section class="logo-row">
-    <img src="https://i.ibb.co/GQ53vT1q/In-Shot-20260218-143854844.png" alt="Duck's Mathematics" class="logo">
-    <img src="https://i.ibb.co/XrsTgBtr/In-Shot-20260218-150023809.png" alt="প্রমাণ করো যে..." class="logo">
-  </section>
+  <div class="search-box">
+    <input type="number" id="roll" placeholder="Enter Roll Number">
+    <button onclick="checkResult()">Check Result</button>
+  </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    © Duck’s Mathematics × প্রমাণ করো যে...
-  </footer>
+  <div id="loading" class="loading">Checking Result...</div>
+  <div id="result" class="result-card"></div>
+</div>
+
+<script>
+let resultsData = [];
+
+fetch('results.json')
+  .then(res => res.json())
+  .then(data => {
+    resultsData = data;
+  });
+
+function checkResult() {
+  const roll = document.getElementById("roll").value.trim();
+  const resultBox = document.getElementById("result");
+  const loading = document.getElementById("loading");
+
+  resultBox.innerHTML = "";
+  loading.style.display = "block";
+
+  setTimeout(() => {
+    loading.style.display = "none";
+
+    const student = resultsData.find(s => s.roll === roll);
+
+    if (student) {
+      resultBox.innerHTML = `
+        <h2>${student.name}</h2>
+        <p><strong>Roll:</strong> ${student.roll}</p>
+        <p><strong>Institution:</strong> ${student.institution}</p>
+        <p><strong>Category:</strong> 
+          <span class="${student.categoryClass}">
+            ${student.category}
+          </span>
+        </p>
+      `;
+    } else {
+      resultBox.innerHTML = `
+        <h2 class="fail">Result Not Found</h2>
+        <p>This roll did not receive scholarship.</p>
+      `;
+    }
+
+  }, 1000);
+}
+</script>
+
 </body>
 </html>
