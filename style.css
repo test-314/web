@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 30px;
+  margin: 0;
 }
 
 .container {
@@ -29,6 +30,11 @@ input {
   width: 65%;
   border-radius: 8px;
   border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus {
+  border-color: #00416A;
 }
 
 button {
@@ -38,6 +44,7 @@ button {
   background: #00416A;
   color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
@@ -55,6 +62,7 @@ button:hover {
   padding: 15px;
   border-radius: 10px;
   background: #f5f5f5;
+  min-height: 50px;
 }
 
 .TalentPool {
@@ -69,6 +77,7 @@ button:hover {
 
 .fail {
   color: red;
+  font-weight: bold;
 }
 
 @media (max-width: 480px) {
