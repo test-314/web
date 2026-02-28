@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Scholarship Result 2025 - CHHATAK-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -18,6 +19,11 @@
 
   <div id="loading" class="loading">Checking Result...</div>
   <div id="result" class="result-card"></div>
+
+  <footer class="footer">
+    © Developed by <strong>Md Amir Hamza</strong><br>
+    Data Source: Board of Intermediate & Secondary Education, Sylhet
+  </footer>
 </div>
 
 <script>
@@ -26,13 +32,15 @@ let resultsData = [];
 // Load JSON safely
 fetch('results.json')
   .then(res => {
-    if (!res.ok) {
-      throw new Error("Failed to load results.json");
-    }
+    if (!res.ok) throw new Error("Failed to load results.json");
     return res.json();
   })
   .then(data => {
-    resultsData = data;
+    if (Array.isArray(data)) {
+      resultsData = data;
+    } else {
+      throw new Error("JSON format invalid");
+    }
   })
   .catch(error => {
     console.error("Error loading results:", error);
@@ -56,15 +64,26 @@ function checkResult() {
   setTimeout(() => {
     loading.style.display = "none";
 
-    const student = resultsData.find(s => String(s.roll) === String(roll));
+    const student = resultsData.find(
+      s => String(s.roll) === String(roll)
+    );
 
     if (student) {
+
+      let message = "";
+
+      // 🎉 Congratulations message
+      if (student.category !== "None") {
+        message = `<p class="congrats">🎉 Congratulations! You have been awarded a scholarship.</p>`;
+      }
+
       resultBox.innerHTML = `
+        ${message}
         <h2>${student.name}</h2>
         <p><strong>Roll:</strong> ${student.roll}</p>
         <p><strong>Institution:</strong> ${student.institution}</p>
-        <p><strong>Category:</strong> 
-          <span class="${student.categoryClass}">
+        <p><strong>Category:</strong>
+          <span class="${student.categoryClass || 'General'}">
             ${student.category}
           </span>
         </p>
@@ -75,7 +94,7 @@ function checkResult() {
         <p>This roll did not receive scholarship.</p>
       `;
     }
-  }, 800);
+  }, 600);
 }
 </script>
 
