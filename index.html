@@ -1,102 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>Scholarship Result 2025 - CHHATAK-1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #38bdf8;
+    }
+
+    .day {
+      margin-bottom: 18px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.07);
+      transition: 0.3s;
+    }
+
+    .day:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .day h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #facc15;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .footer {
+      text-align: right;
+      margin-top: 15px;
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>Junior Scholarship Result 2025</h1>
-  <p>Center: 477 - CHHATAK-1</p>
+  <div class="container">
+    <h1>নবম শ্রেণীর ক্লাস রুটিন ২০২৬ (সাইন্স গ্রুপ)</h1>
 
-  <div class="search-box">
-    <input type="number" id="roll" placeholder="Enter Roll Number">
-    <button onclick="checkResult()">Check Result</button>
+    <div class="day">
+      <h2>রবিবার</h2>
+      <ul>
+        <li>বাংলা (১ম)</li>
+        <li>পদার্থবিজ্ঞান</li>
+        <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
+        <li>ইংরেজি (১ম/২য়)</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>সোমবার</h2>
+      <ul>
+        <li>বাংলা (১ম)</li>
+        <li>পদার্থবিজ্ঞান</li>
+        <li>সাধারণ গণিত</li>
+        <li>ইংরেজি (১ম/২য়)</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>মঙ্গলবার</h2>
+      <ul>
+        <li>বাংলা (২য়)</li>
+        <li>জীববিজ্ঞান</li>
+        <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
+        <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>বুধবার</h2>
+      <ul>
+        <li>ইসলাম শিক্ষা</li>
+        <li>সাধারণ গণিত</li>
+        <li>জীববিজ্ঞান</li>
+        <li>ইংরেজি (১ম/২য়)</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <h2>বৃহস্পতিবার</h2>
+      <ul>
+        <li>রসায়ন</li>
+        <li>সাধারণ গণিত</li>
+        <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
+        <li>উচ্চতর গণিত</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      — মোঃ আমির হামজা 
+    
+    </div>
+
   </div>
-
-  <div id="loading" class="loading">Checking Result...</div>
-  <div id="result" class="result-card"></div>
-
-  <footer class="footer">
-    © Developed by <strong>Md Amir Hamza</strong><br>
-    Data Source: Board of Intermediate & Secondary Education, Sylhet
-  </footer>
-</div>
-
-<script>
-let resultsData = [];
-
-// Load JSON safely
-fetch('results.json')
-  .then(res => {
-    if (!res.ok) throw new Error("Failed to load results.json");
-    return res.json();
-  })
-  .then(data => {
-    if (Array.isArray(data)) {
-      resultsData = data;
-    } else {
-      throw new Error("JSON format invalid");
-    }
-  })
-  .catch(error => {
-    console.error("Error loading results:", error);
-    alert("Result data failed to load. Check JSON file.");
-  });
-
-function checkResult() {
-  const roll = document.getElementById("roll").value.trim();
-  const resultBox = document.getElementById("result");
-  const loading = document.getElementById("loading");
-
-  resultBox.innerHTML = "";
-
-  if (!roll) {
-    alert("Please enter roll number");
-    return;
-  }
-
-  loading.style.display = "block";
-
-  setTimeout(() => {
-    loading.style.display = "none";
-
-    const student = resultsData.find(
-      s => String(s.roll) === String(roll)
-    );
-
-    if (student) {
-
-      let message = "";
-
-      // 🎉 Congratulations message
-      if (student.category !== "None") {
-        message = `<p class="congrats">🎉 Congratulations! You have been awarded a scholarship.</p>`;
-      }
-
-      resultBox.innerHTML = `
-        ${message}
-        <h2>${student.name}</h2>
-        <p><strong>Roll:</strong> ${student.roll}</p>
-        <p><strong>Institution:</strong> ${student.institution}</p>
-        <p><strong>Category:</strong>
-          <span class="${student.categoryClass || 'General'}">
-            ${student.category}
-          </span>
-        </p>
-      `;
-    } else {
-      resultBox.innerHTML = `
-        <h2 class="fail">Result Not Found</h2>
-        <p>This roll did not receive scholarship.</p>
-      `;
-    }
-  }, 600);
-}
-</script>
 
 </body>
 </html>
