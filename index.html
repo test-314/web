@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>
-
   <style>
     body {
       margin: 0;
@@ -65,11 +64,21 @@
       margin: 0;
     }
 
+    li { margin: 6px 0; }
+
+    /* Make subjects clickable links */
+    .accordion-content li a {
+      text-decoration: none;
+      color: #0369a1;
+      transition: 0.2s;
+    }
+    .accordion-content li a:hover {
+      color: #0284c7;
+    }
+
     .accordion.active .accordion-content {
       max-height: 500px;
     }
-
-    li { margin: 6px 0; }
 
     .footer {
       text-align: center;
@@ -95,7 +104,7 @@
       h1 { font-size: 20px; }
     }
 
-    /* Popup */
+    /* Popup (Friday/Saturday Holiday) */
     .popup {
       position: fixed;
       top: 0;
@@ -121,7 +130,6 @@
       animation: popupFade 0.4s ease;
     }
 
-    /* 🔥 Thin Close Icon */
     .popup-close {
       position: absolute;
       top: 12px;
@@ -130,7 +138,6 @@
       height: 18px;
       cursor: pointer;
     }
-
     .popup-close::before,
     .popup-close::after {
       content: "";
@@ -143,19 +150,10 @@
       transform-origin: center;
       transition: 0.2s;
     }
-
-    .popup-close::before {
-      transform: rotate(45deg);
-    }
-
-    .popup-close::after {
-      transform: rotate(-45deg);
-    }
-
+    .popup-close::before { transform: rotate(45deg); }
+    .popup-close::after { transform: rotate(-45deg); }
     .popup-close:hover::before,
-    .popup-close:hover::after {
-      background: #dc2626;
-    }
+    .popup-close:hover::after { background: #dc2626; }
 
     @keyframes popupFade {
       from { transform: scale(0.7); opacity: 0; }
@@ -165,7 +163,6 @@
 </head>
 
 <body>
-
 <div class="container">
   <h1>নবম শ্রেণীর ক্লাস রুটিন ২০২৬ (সাইন্স গ্রুপ)</h1>
 
@@ -180,7 +177,7 @@
         <li>উচ্চতর গণিত</li>
         <li>ক্যারিয়ার শিক্ষা</li>
         <li>সাধারণ গণিত</li>
-        <li>পদার্থবিজ্ঞান</li>
+        <li><a href="biology.html" target="_blank">জীববিজ্ঞান</a></li>
       </ul>
     </div>
   </div>
@@ -212,7 +209,7 @@
         <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
         <li>পদার্থবিজ্ঞান</li>
         <li>সাধারণ গণিত</li>
-        <li>জীববিজ্ঞান</li>
+        <li><a href="biology.html" target="_blank">জীববিজ্ঞান</a></li>
       </ul>
     </div>
   </div>
@@ -226,7 +223,7 @@
         <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
         <li>রসায়ন</li>
         <li>উচ্চতর গণিত</li>
-        <li>জীববিজ্ঞান</li>
+        <li><a href="biology.html" target="_blank">জীববিজ্ঞান</a></li>
         <li>রসায়ন</li>
         <li>English (For Today/Grammar and Composition)</li>
       </ul>
@@ -241,7 +238,7 @@
         <li>বাংলা ব্যাকরণ ও নির্মিত</li>
         <li>সাধারণ গণিত</li>
         <li>পদার্থবিজ্ঞান</li>
-        <li>জীববিজ্ঞান</li>
+        <li><a href="biology.html" target="_blank">জীববিজ্ঞান</a></li>
         <li>ইসলাম শিক্ষা</li>
         <li>English (For Today/Grammar and Composition)</li>
         <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
@@ -256,7 +253,7 @@
   </div>
 </div>
 
-<!-- Popup -->
+<!-- Holiday Popup -->
 <div id="holidayPopup" class="popup">
   <div class="popup-box">
     <span id="closePopup" class="popup-close"></span>
@@ -265,8 +262,8 @@
 </div>
 
 <script>
+  // Accordion toggle
   const accordions = document.querySelectorAll(".accordion");
-
   accordions.forEach(acc => {
     acc.querySelector(".accordion-header").addEventListener("click", () => {
       document.querySelectorAll(".accordion").forEach(a => {
@@ -276,8 +273,8 @@
     });
   });
 
+  // Holiday popup for Friday/Saturday
   const today = new Date().getDay();
-
   if(today === 5 || today === 6){
     const popup = document.getElementById("holidayPopup");
     const closeBtn = document.getElementById("closePopup");
@@ -294,6 +291,5 @@
     });
   }
 </script>
-
 </body>
 </html>
