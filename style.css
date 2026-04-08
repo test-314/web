@@ -198,58 +198,46 @@ li {
   transform: rotate(-45deg);
 }
 
-/* ===== Experiment Card FINAL DESIGN ===== */
-
+/* Card */
 .exp-card {
   background: rgba(15, 23, 42, 0.6);
   border-radius: 20px;
-  overflow: hidden;
   border: 1px solid rgba(148,163,184,0.15);
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   margin-top: 15px;
-  padding: 20px; /* 🔥 spacing added */
-  text-align: center; /* 🔥 center সব */
+  padding: 20px;
 }
 
-/* Image FIX */
+/* Image center */
 .exp-img {
-  width: 85%;           /* 🔥 smaller */
-  max-width: 260px;     /* 🔥 limit size */
-  height: auto;
-  border-radius: 16px;  /* 🔥 curved */
+  width: 85%;
+  max-width: 260px;
+  border-radius: 16px;
   display: block;
-  margin: 0 auto 15px;  /* 🔥 center + space নিচে */
+  margin: 0 auto 15px; /* center */
 }
 
-/* Content */
-.exp-content {
-  padding: 5px 10px;
-}
-
-/* Title */
+/* Title center */
 .exp-title {
+  text-align: center; /* 🔥 */
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   color: #e2e8f0;
 }
 
-/* Info */
+/* Info left */
 .exp-info {
+  text-align: left; /* 🔥 */
   font-size: 14px;
-  margin: 10px 0; /* 🔥 better spacing */
+  margin: 10px 0;
   color: #94a3b8;
 }
 
-/* Back Button */
+/* Back button */
 .back-btn {
   display: inline-block;
   margin-bottom: 15px;
   text-decoration: none;
   color: #38bdf8;
-  font-size: 14px;
-}
-
-.back-btn:hover {
-  color: #0ea5e9;
 }
