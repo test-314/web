@@ -198,53 +198,56 @@ li {
   transform: rotate(-45deg);
 }
 
-/* ===== Experiment Card (UPGRADED) ===== */
+/* ===== Experiment Card FINAL DESIGN ===== */
 
 .exp-card {
   background: rgba(15, 23, 42, 0.6);
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(148,163,184,0.15);
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  margin-top: 10px;
+  margin-top: 15px;
+  padding: 20px; /* 🔥 spacing added */
+  text-align: center; /* 🔥 center সব */
 }
 
-/* Image Fix */
+/* Image FIX */
 .exp-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  width: 85%;           /* 🔥 smaller */
+  max-width: 260px;     /* 🔥 limit size */
+  height: auto;
+  border-radius: 16px;  /* 🔥 curved */
   display: block;
+  margin: 0 auto 15px;  /* 🔥 center + space নিচে */
 }
 
-/* Content spacing */
+/* Content */
 .exp-content {
-  padding: 18px;
+  padding: 5px 10px;
 }
 
 /* Title */
 .exp-title {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #e2e8f0;
 }
 
-/* Info text */
+/* Info */
 .exp-info {
   font-size: 14px;
-  margin: 8px 0;
+  margin: 10px 0; /* 🔥 better spacing */
   color: #94a3b8;
 }
 
-/* ===== Back Button FIX ===== */
+/* Back Button */
 .back-btn {
   display: inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   text-decoration: none;
   color: #38bdf8;
   font-size: 14px;
-  transition: 0.2s;
 }
 
 .back-btn:hover {
