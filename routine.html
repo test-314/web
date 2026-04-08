@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+<h1>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</h1>
+
+<!-- Progress -->
+<div class="progress-card">
+  <div class="progress-title">Weekly Progress</div>
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+  <div id="progressText"></div>
+</div>
+
+<!-- Accordion Days -->
+
+<div class="accordion">
+  <div class="accordion-header">রবিবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা ব্যাকরণ ও নির্মিতি</li>
+      <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
+      <li>English</li>
+      <li>উচ্চতর গণিত</li>
+      <li>ক্যারিয়ার শিক্ষা</li>
+      <li>সাধারণ গণিত</li>
+      <li>পদার্থবিজ্ঞান</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">সোমবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা ব্যাকরণ ও নির্মিতি</li>
+      <li>পদার্থবিজ্ঞান</li>
+      <li>English</li>
+      <li>সাধারণ গণিত</li>
+      <li>আইসিটি</li>
+      <li>রসায়ন</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">মঙ্গলবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা সাহিত্য</li>
+      <li>English</li>
+      <li>শারীরিক শিক্ষা</li>
+      <li>বাংলাদেশ</li>
+      <li>রসায়ন</li>
+      <li>গণিত</li>
+      <li>জীববিজ্ঞান</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">বুধবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা সাহিত্য</li>
+      <li>বাংলাদেশ</li>
+      <li>রসায়ন</li>
+      <li>উচ্চতর গণিত</li>
+      <li>জীববিজ্ঞান</li>
+      <li>ইসলাম শিক্ষা</li>
+      <li>English</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">বৃহস্পতিবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা সাহিত্য</li>
+      <li>গণিত</li>
+      <li>পদার্থবিজ্ঞান</li>
+      <li>জীববিজ্ঞান</li>
+      <li>ইসলাম শিক্ষা</li>
+      <li>English</li>
+      <li>আইসিটি</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+© <span>TEAM SCIENCE • SSC 2028</span><br>
+Developed by Md Amir Hamza
+</div>
+
+</div>
+
+<!-- Popup -->
+<div id="holidayPopup" class="popup">
+  <div class="popup-box">
+    <span id="closePopup" class="popup-close"></span>
+    আজকে স্কুল বন্ধ 🎉
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".accordion-header").forEach(header=>{
+  header.onclick = ()=> header.parentElement.classList.toggle("active");
+});
+
+const day = new Date().getDay();
+let progress = (day <= 4) ? (day + 1) * 20 : 100;
+let text = (day <= 4) ? progress + "% of week completed" : "Holiday 🎉";
+
+document.getElementById("progressFill").style.width = progress + "%";
+document.getElementById("progressText").innerText = text;
+
+if(day === 5 || day === 6){
+  const popup = document.getElementById("holidayPopup");
+  popup.style.display = "flex";
+  setTimeout(()=> popup.style.display = "none", 3000);
+}
+</script>
+
+</body>
+      </html>
