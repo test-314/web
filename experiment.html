@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Experiments</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+<h1>🧪 বিজ্ঞান পরীক্ষণ</h1>
+
+<!-- Physics -->
+<div class="accordion">
+  <div class="accordion-header">⚡ পদার্থবিজ্ঞান</div>
+  <div class="accordion-content">
+    <ul>
+      <li><a href="states.html">পদার্থের তিন অবস্থা</a></li>
+      <li><a href="diffusion.html">ব্যাপন</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Chemistry -->
+<div class="accordion">
+  <div class="accordion-header">🧪 রসায়ন</div>
+  <div class="accordion-content">
+    <ul>
+      <li><a href="acid-base.html">অম্ল ও ক্ষার বিক্রিয়া</a></li>
+      <li><a href="gas.html">গ্যাস উৎপাদন</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Biology -->
+<div class="accordion">
+  <div class="accordion-header">🌱 জীববিজ্ঞান</div>
+  <div class="accordion-content">
+    <ul>
+      <li><a href="plant.html">উদ্ভিদের বৃদ্ধি</a></li>
+      <li><a href="cell.html">কোষ পর্যবেক্ষণ</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+© <span>TEAM SCIENCE • SSC 2028</span><br>
+Developed by Md Amir Hamza
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".accordion-header").forEach(header=>{
+  header.onclick = ()=> header.parentElement.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
