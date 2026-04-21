@@ -136,8 +136,13 @@ const normalDates = [
   "2026-05-19"
 ];
 
-// Convert today to YYYY-MM-DD
-const formatDate = today.toISOString().split("T")[0];
+// ✅ FIXED DATE FORMAT (Bangladesh friendly)
+const formatDate = today.toLocaleDateString('en-CA');
+
+// Normalize time (important)
+today.setHours(0,0,0,0);
+startDate.setHours(0,0,0,0);
+endDate.setHours(0,0,0,0);
 
 // Check inside range
 const inRange = today >= startDate && today <= endDate;
@@ -154,7 +159,7 @@ function limitSubjects() {
 
 // ===== APPLY LOGIC =====
 if(inRange && !normalDates.includes(formatDate)){
-  limitSubjects(); // Only 4 subjects
+  limitSubjects();
 }
 
 // ===== PROGRESS =====
