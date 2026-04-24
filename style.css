@@ -241,3 +241,65 @@ li {
   text-decoration: none;
   color: #38bdf8;
 }
+
+/* ===== Countdown ===== */
+.countdown-card {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 18px;
+  border-radius: 16px;
+  margin: 15px 0;
+  border: 1px solid rgba(148,163,184,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Title */
+.countdown-title {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Grid layout */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Each box */
+.time-box {
+  background: rgba(15, 23, 42, 0.7);
+  padding: 12px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(148,163,184,0.08);
+  transition: 0.25s;
+}
+
+/* Hover effect (premium feel) */
+.time-box:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56,189,248,0.4);
+}
+
+/* Number */
+.time-box span {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+/* Label */
+.time-box small {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* 📱 Mobile tweak */
+@media (max-width: 400px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
