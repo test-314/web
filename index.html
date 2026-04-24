@@ -3,29 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSC 2028 | Home</title>
-
-<link rel="stylesheet" href="style.css">
+<title>SSC 2028 | Dashboard</title>
 
 <style>
-.countdown-box{
-  margin-top:20px;
-  padding:15px;
-  border-radius:12px;
-  background:#111;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   color:#fff;
+}
+
+/* Container */
+.container{
+  width:90%;
+  max-width:400px;
   text-align:center;
 }
 
-.countdown-title{
-  font-size:14px;
+/* Title */
+h1{
+  font-size:32px;
+  font-weight:700;
+}
+
+.subtitle{
+  opacity:0.7;
+  margin-bottom:20px;
+}
+
+/* Card */
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Countdown Grid */
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+
+.time-box{
+  background: rgba(255,255,255,0.1);
+  padding:10px;
+  border-radius:12px;
+}
+
+.time-box span{
+  display:block;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.time-box small{
+  font-size:12px;
   opacity:0.7;
 }
 
-#countdown{
-  font-size:22px;
-  font-weight:bold;
-  margin-top:8px;
+/* Nav Buttons */
+.nav a{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  padding:12px;
+  margin:8px 0;
+  border-radius:12px;
+  background: rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+.nav a:hover{
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer{
+  margin-top:20px;
+  font-size:12px;
+  opacity:0.7;
 }
 </style>
 
@@ -33,18 +105,38 @@
 
 <body>
 
-<div class="container center">
+<div class="container">
 
   <h1>SSC 2028</h1>
   <p class="subtitle">Study Dashboard</p>
 
-  <!-- 🔥 Countdown -->
-  <div class="countdown-box">
-    <div class="countdown-title">Half Yearly Exam Countdown</div>
-    <div id="countdown">Loading...</div>
+  <!-- Countdown Card -->
+  <div class="card">
+    <div>Half Yearly Exam</div>
+
+    <div class="countdown">
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>Days</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>Hours</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+
   </div>
 
-  <div class="nav">
+  <!-- Navigation -->
+  <div class="card nav">
     <a href="routine.html">📅 Class Routine</a>
     <a href="experiment.html">🧪 Experiments</a>
   </div>
@@ -52,12 +144,11 @@
 </div>
 
 <div class="footer">
-  © <span>TEAM SCIENCE • SSC 2028</span><br>
+  © TEAM SCIENCE • SSC 2028 <br>
   Developed by Md Amir Hamza
 </div>
 
 <script>
-// ===== COUNTDOWN =====
 const examDate = new Date("2026-06-28T00:00:00").getTime();
 
 function updateCountdown(){
@@ -65,20 +156,16 @@ function updateCountdown(){
   const diff = examDate - now;
 
   if(diff <= 0){
-    document.getElementById("countdown").innerText = "Exam Started 🚀";
+    document.querySelector(".countdown").innerHTML = "🚀 Exam Started!";
     return;
   }
 
-  const days = Math.floor(diff / (1000*60*60*24));
-  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((diff % (1000*60)) / 1000);
-
-  document.getElementById("countdown").innerText =
-    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+  document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  document.getElementById("minutes").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
+  document.getElementById("seconds").innerText = Math.floor((diff % (1000*60)) / 1000);
 }
 
-// update every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
 </script>
