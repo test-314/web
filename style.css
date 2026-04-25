@@ -113,6 +113,167 @@ li {
 .popup {
   position: fixed;
   inset: 0;
+/* =========================
+   GLOBAL SAFE BASE (ALL PAGES)
+========================= */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #020617;
+  color: #e2e8f0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(148,163,184,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav a {
+  display: block;
+  margin: 12px auto;
+  padding: 12px;
+  max-width: 260px;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  background: #0284c7;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-card {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 15px;
+  border-radius: 14px;
+  margin: 15px 0;
+  border: 1px solid rgba(148,163,184,0.1);
+}
+
+.progress-title {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  transition: 0.6s ease;
+}
+
+/* =========================
+   ACCORDION (ALL PAGES SAFE)
+========================= */
+
+.accordion {
+  margin-bottom: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148,163,184,0.1);
+}
+
+.accordion-header {
+  padding: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.accordion-header:hover {
+  background: rgba(56,189,248,0.08);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.35s ease;
+  padding: 0 15px;
+}
+
+.accordion.active .accordion-content {
+  max-height: 500px;
+  padding: 12px 15px;
+}
+
+/* =========================
+   LIST
+========================= */
+
+li {
+  margin: 6px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #64748b;
+  width: 100%;
+  max-width: 850px;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+  position: fixed;
+  inset: 0;
   background: rgba(2,6,23,0.8);
   display: none;
   justify-content: center;
@@ -142,7 +303,6 @@ li {
   padding: 10px 4px;
   background: rgba(15, 23, 42, 0.85);
   border-radius: 10px;
-  border: 1px solid rgba(148,163,184,0.1);
   text-align: center;
 }
 
@@ -159,8 +319,7 @@ li {
 }
 
 /* =====================================================
-   🔥 ONLY ROUTINE PAGE CRASH SYSTEM (SCOPED FIX)
-   👉 অন্য pages এ কিছুই effect করবে না
+   💀 ONLY ROUTINE.HTML CRASH SYSTEM (SAFE SCOPED)
 ===================================================== */
 
 .routine-page #crashScreen {
@@ -185,18 +344,13 @@ li {
   animation: shake 0.2s infinite;
 }
 
-.routine-page .crashBox p {
-  color: #00ff88;
-  opacity: 0.9;
-}
-
 .routine-page .loader {
   width: 40px;
   height: 40px;
   border: 4px solid #00ff88;
   border-top: 4px solid red;
   border-radius: 50%;
-  margin: 20px auto;
+  margin: 15px auto;
   animation: spin 1s linear infinite;
 }
 
@@ -220,4 +374,4 @@ li {
   0% { opacity: 1; }
   50% { opacity: 0.8; }
   100% { opacity: 1; }
-}
+   }
