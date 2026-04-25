@@ -98,11 +98,96 @@
   </div>
 </div>
 
-<!-- Footer -->
 <div class="footer">
-© <span>TEAM SCIENCE • SSC 2028</span><br>
+© TEAM SCIENCE • SSC 2028<br>
 Developed by Md Amir Hamza
 </div>
+
+</div>
+
+<!-- Popup -->
+<div id="holidayPopup" class="popup">
+  <div class="popup-box">
+    আজকে স্কুল বন্ধ 🎉
+  </div>
+</div>
+
+<script>
+
+// Accordion
+document.querySelectorAll(".accordion-header").forEach(header=>{
+  header.onclick = ()=> header.parentElement.classList.toggle("active");
+});
+
+// ===== DATA =====
+const today = new Date();
+
+const normalDates = [
+  "2026-04-22",
+  "2026-04-27",
+  "2026-04-29",
+  "2026-05-04",
+  "2026-05-18",
+  "2026-05-19"
+];
+
+// ===== FIND WEEK =====
+const currentDay = today.getDay();
+
+const weekStart = new Date(today);
+weekStart.setDate(today.getDate() - currentDay);
+
+const weekEnd = new Date(weekStart);
+weekEnd.setDate(weekStart.getDate() + 4);
+
+// Normalize
+weekStart.setHours(0,0,0,0);
+weekEnd.setHours(0,0,0,0);
+
+// ===== FIND SPECIAL DAY =====
+let specialDayIndex = -1;
+
+normalDates.forEach(dateStr=>{
+  const d = new Date(dateStr);
+  d.setHours(0,0,0,0);
+
+  if(d >= weekStart && d <= weekEnd){
+    specialDayIndex = d.getDay();
+  }
+});
+
+// ===== APPLY RULE =====
+document.querySelectorAll(".accordion").forEach((acc, index)=>{
+  const items = acc.querySelectorAll("li");
+
+  if(index === specialDayIndex){
+    items.forEach(li => li.style.display = "list-item");
+  } else {
+    items.forEach((li,i)=>{
+      if(i >= 4) li.style.display = "none";
+    });
+  }
+});
+
+// ===== PROGRESS =====
+const day = today.getDay();
+let progress = (day <= 4) ? (day + 1) * 20 : 100;
+let text = (day <= 4) ? progress + "% of week completed" : "Holiday 🎉";
+
+document.getElementById("progressFill").style.width = progress + "%";
+document.getElementById("progressText").innerText = text;
+
+// ===== HOLIDAY =====
+if(day === 5 || day === 6){
+  const popup = document.getElementById("holidayPopup");
+  popup.style.display = "flex";
+  setTimeout(()=> popup.style.display = "none", 3000);
+}
+
+</script>
+
+</body>
+</html></div>
 
 </div>
 
