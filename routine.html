@@ -6,6 +6,8 @@
 <title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>
 
 <style>
+
+/* ================= BASE ================= */
 body{
   margin:0;
   font-family:Segoe UI,sans-serif;
@@ -13,19 +15,19 @@ body{
   color:#e2e8f0;
 }
 
-/* container */
+/* ================= CONTAINER ================= */
 .container{
   max-width:850px;
   margin:20px auto;
   padding:20px;
 }
 
-/* title */
+/* ================= TITLE ================= */
 h1{
   text-align:center;
 }
 
-/* accordion */
+/* ================= ACCORDION ================= */
 .accordion{
   margin:10px 0;
   border:1px solid #1e293b;
@@ -42,7 +44,7 @@ h1{
 .accordion-content{
   max-height:0;
   overflow:hidden;
-  transition:0.3s;
+  transition:0.3s ease;
   background:#111827;
   padding:0 12px;
 }
@@ -52,24 +54,29 @@ h1{
   padding:12px;
 }
 
-/* ===== GLITCH CRASH SCREEN (FIXED) ===== */
+/* ================= CRASH MODE LOCK ================= */
+body.crash-mode{
+  overflow:hidden;
+  pointer-events:none;
+}
+
+/* ================= CRASH SCREEN ================= */
 #crashScreen{
   position:fixed;
   inset:0;
   background:radial-gradient(circle,#000 40%,#050505);
   z-index:999999;
+
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+
   color:#00ff88;
   font-family:monospace;
-  animation:flicker 0.12s infinite;
-}
 
-/* prevent interaction ONLY in this page */
-body{
-  overflow:hidden;
+  animation:flicker 0.12s infinite;
+  user-select:none;
 }
 
 .crashBox h1{
@@ -79,7 +86,6 @@ body{
 }
 
 .crashBox p{
-  color:#00ff88;
   opacity:0.9;
 }
 
@@ -93,7 +99,7 @@ body{
   animation:spin 1s linear infinite;
 }
 
-/* animations */
+/* ================= ANIMATION ================= */
 @keyframes spin{
   100%{transform:rotate(360deg);}
 }
@@ -103,6 +109,80 @@ body{
   25%{transform:translate(2px,-2px)}
   50%{transform:translate(-2px,2px)}
   75%{transform:translate(2px,2px)}
+  100%{transform:translate(0)}
+}
+
+@keyframes flicker{
+  0%{opacity:1}
+  50%{opacity:0.8}
+  100%{opacity:1}
+}
+
+</style>
+</head>
+
+<body class="crash-mode">
+
+<!-- ================= CRASH SCREEN ================= -->
+<div id="crashScreen">
+  <div class="crashBox">
+    <h1>⚠ SYSTEM CRASHED</h1>
+    <p>We will fix it soon..</p>
+    <div class="loader"></div>
+  </div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<div class="container">
+
+<h1>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</h1>
+
+<div class="accordion">
+  <div class="accordion-header">রবিবার</div>
+  <div class="accordion-content">
+    <p>বাংলা, ইংরেজি, গণিত, পদার্থবিজ্ঞান</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">সোমবার</div>
+  <div class="accordion-content">
+    <p>রসায়ন, ICT, সাধারণ গণিত</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">মঙ্গলবার</div>
+  <div class="accordion-content">
+    <p>জীববিজ্ঞান, English, শারীরিক শিক্ষা</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">বুধবার</div>
+  <div class="accordion-content">
+    <p>উচ্চতর গণিত, বাংলাদেশ ও বিশ্বপরিচয়</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-header">বৃহস্পতিবার</div>
+  <div class="accordion-content">
+    <p>রসায়ন, ICT, ইসলাম শিক্ষা</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+// accordion
+document.querySelectorAll(".accordion-header").forEach(h=>{
+  h.onclick=()=>h.parentElement.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>  75%{transform:translate(2px,2px)}
   100%{transform:translate(0)}
 }
 
