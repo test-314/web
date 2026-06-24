@@ -106,15 +106,19 @@
       <span id="closePopup" class="popup-close">✕</span>
       আজকে স্কুল বন্ধ 🎉
     </div>
-  </div>  <!-- Info Popup -->  <div id="infoPopup" class="popup">
-    <div class="popup-box">  <p class="popup-text">
-    উপরিউক্ত রুটিনটি আমরা বিদ্যালয়ের অফিশিয়াল নোটিশ/সহপাঠীবৃন্দের নিকট হতে সংগ্রহ করেছি। রুটিনটি অনলাইনে আপলোডের সময় আমরা সর্বোচ্চ সতর্কতা অবলম্বন করেছি; তথাপি যদি কোনো প্রকার ত্রুটি আপনাদের দৃষ্টিগোচর হয়, তবে দয়া করে সম্মানিত Developer মহোদয়ের সাথে যোগাযোগ করবেন। তিনি উক্ত ত্রুটি তাৎক্ষণিকভাবে সংশোধনের নিমিত্তে সচেষ্ট হবেন।
-  </p>
+  </div>  <!-- Info Popup -->
+<div id="infoPopup" class="popup" onclick="closeInfo()">
+  <div class="popup-box" onclick="event.stopPropagation()">
 
-  <button onclick="closeInfo()">ঠিক আছে</button>
+    <h3 class="popup-title">তথ্যসূত্র ও বিজ্ঞপ্তি</h3>
 
-</div>
+    <p class="popup-text">
+      উপরিউক্ত রুটিনটি আমরা বিদ্যালয়ের অফিশিয়াল নোটিশ/সহপাঠীবৃন্দের নিকট হতে সংগ্রহ করেছি। রুটিনটি অনলাইনে আপলোডের সময় আমরা সর্বোচ্চ সতর্কতা অবলম্বন করেছি; তথাপি যদি কোনো প্রকার ত্রুটি আপনাদের দৃষ্টিগোচর হয়, তবে দয়া করে সম্মানিত Developer মহোদয়ের সাথে যোগাযোগ করবেন। তিনি উক্ত ত্রুটি তাৎক্ষণিকভাবে সংশোধনের নিমিত্তে সচেষ্ট হবেন।
+    </p>
 
+    <button onclick="closeInfo()">বুঝেছি</button>
+
+  </div>
   </div>  <script>
 
     // Accordion Toggle
