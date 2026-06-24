@@ -336,3 +336,25 @@ h1 {
   font-size: 12px;
   color: #94a3b8;
   }
+.info-btn{
+  font-size: 16px;
+  color: #38bdf8;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.popup-text{
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+.popup-box button{
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: white;
+  cursor: pointer;
+}
