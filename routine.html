@@ -1,141 +1,158 @@
-<!DOCTYPE html>  
-<html lang="bn">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>  
-  <link rel="stylesheet" href="style.css">  
-</head>  
-<body>  
-  <div class="container">  
-    <h1>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</h1>  
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নবম শ্রেণীর ক্লাস রুটিন ২০২৬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  <div class="container"><h1>
+  নবম শ্রেণীর ক্লাস রুটিন ২০২৬
+  <span class="info-btn" onclick="openInfo()">ⓘ</span>
+</h1>
 
-    <!-- Progress -->  
-    <div class="progress-card">  
-      <div class="progress-title">Weekly Progress</div>  
-      <div class="progress-bar">  
-        <div id="progressFill"></div>  
-      </div>  
-      <div id="progressText"></div>  
-    </div>  
+<!-- Progress -->
+<div class="progress-card">
+  <div class="progress-title">Weekly Progress</div>
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+  <div id="progressText"></div>
+</div>
 
-    <!-- Accordion Days -->  
-    <div class="accordion">  
-      <div class="accordion-header">রবিবার</div>  
-      <div class="accordion-content">  
-        <ul>  
-          <li>বাংলা ব্যাকরণ ও নির্মিতি</li>  
-          <li>সাধারণ গণিত </li>  
-          <li>English  (For Today/Grammar and Composition)</li>  
-          <li>উচ্চতর গণিত</li>  
-          <li>পদার্থবিজ্ঞান</li>  
-          <li>বাংলাদেশ ও বিশ্বপরিচয়</li>  
-          <li>ক্যারিয়ার শিক্ষা</li>  
-        </ul>  
-      </div>  
-    </div>  
+<!-- Accordion Days -->
+<div class="accordion">
+  <div class="accordion-header">রবিবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা ব্যাকরণ ও নির্মিতি</li>
+      <li>সাধারণ গণিত</li>
+      <li>English (For Today/Grammar and Composition)</li>
+      <li>উচ্চতর গণিত</li>
+      <li>পদার্থবিজ্ঞান</li>
+      <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
+      <li>ক্যারিয়ার শিক্ষা</li>
+    </ul>
+  </div>
+</div>
 
-    <div class="accordion">  
-      <div class="accordion-header">সোমবার</div>  
-      <div class="accordion-content">  
-        <ul>  
-          <li>বাংলা ব্যাকরণ ও নির্মিতি</li>  
-          <li>পদার্থবিজ্ঞান</li>  
-          <li>English (For Today/Grammar and Composition)</li>  
-          <li>উচ্চতর গণিত</li>  
-          <li>সাধারণ গণিত</li>  
-          <li>রসায়ন</li>
-          <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>  
-        </ul>  
-      </div>  
-    </div>  
+<div class="accordion">
+  <div class="accordion-header">সোমবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা ব্যাকরণ ও নির্মিতি</li>
+      <li>পদার্থবিজ্ঞান</li>
+      <li>English (For Today/Grammar and Composition)</li>
+      <li>উচ্চতর গণিত</li>
+      <li>সাধারণ গণিত</li>
+      <li>রসায়ন</li>
+      <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
+    </ul>
+  </div>
+</div>
 
-    <div class="accordion">  
-      <div class="accordion-header">মঙ্গলবার</div>  
-      <div class="accordion-content">  
-        <ul>  
-          <li>সাধারণ গণিত</li>  
-          <li>English (For Today/Grammar and Composition)</li>  
-          <li>শারীরিক শিক্ষা</li>  
-          <li>বাংলাদেশ ও বিশ্বপরিচয়</li>  
-          <li>রসায়ন</li>  
-          <li>জীববিজ্ঞান</li>  
-          <li>বাংলা সাহিত্যে (গদ্য)</li>  
-        </ul>  
-      </div>  
-    </div>  
+<div class="accordion">
+  <div class="accordion-header">মঙ্গলবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>সাধারণ গণিত</li>
+      <li>English (For Today/Grammar and Composition)</li>
+      <li>শারীরিক শিক্ষা</li>
+      <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
+      <li>রসায়ন</li>
+      <li>জীববিজ্ঞান</li>
+      <li>বাংলা সাহিত্যে (গদ্য)</li>
+    </ul>
+  </div>
+</div>
 
-    <div class="accordion">  
-      <div class="accordion-header">বুধবার</div>  
-      <div class="accordion-content">  
-        <ul>  
-          <li>English (For Today/Grammar and Composition)</li>  
-          <li>বাংলাদেশ ও বিশ্বপরিচয়</li>  
-          <li>রসায়ন</li>  
-          <li>উচ্চতর গণিত</li>  
-          <li>জীববিজ্ঞান</li>  
-          <li>ইসলাম শিক্ষা</li>  
-          <li>বাংলা সাহিত্যে (পদ্য)</li>  
-        </ul>  
-      </div>  
-    </div>  
+<div class="accordion">
+  <div class="accordion-header">বুধবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>English (For Today/Grammar and Composition)</li>
+      <li>বাংলাদেশ ও বিশ্বপরিচয়</li>
+      <li>রসায়ন</li>
+      <li>উচ্চতর গণিত</li>
+      <li>জীববিজ্ঞান</li>
+      <li>ইসলাম শিক্ষা</li>
+      <li>বাংলা সাহিত্যে (পদ্য)</li>
+    </ul>
+  </div>
+</div>
 
-    <div class="accordion">  
-      <div class="accordion-header">বৃহস্পতিবার</div>  
-      <div class="accordion-content">  
-        <ul>  
-          <li>বাংলা সহপাঠ (নাটক/উপন্যাস)</li>  
-          <li>সাধারণ গণিত</li>  
-          <li>পদার্থবিজ্ঞান</li>  
-          <li>জীববিজ্ঞান</li>  
-          <li>ইসলাম শিক্ষা</li>  
-          <li>English (For Today/Grammar and Composition)</li>  
-          <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>  
-        </ul>  
-      </div>  
-    </div>  
+<div class="accordion">
+  <div class="accordion-header">বৃহস্পতিবার</div>
+  <div class="accordion-content">
+    <ul>
+      <li>বাংলা সহপাঠ (নাটক/উপন্যাস)</li>
+      <li>সাধারণ গণিত</li>
+      <li>পদার্থবিজ্ঞান</li>
+      <li>জীববিজ্ঞান</li>
+      <li>ইসলাম শিক্ষা</li>
+      <li>English (For Today/Grammar and Composition)</li>
+      <li>তথ্য ও যোগাযোগ প্রযুক্তি</li>
+    </ul>
+  </div>
+</div>
 
-    <!-- Footer -->  
-    <div class="footer">  
-      © <span>TEAM SCIENCE • SSC 2028</span><br>  
-      Developed by Md Amir Hamza  
-    </div>  
-  </div>  
+<!-- Footer -->
+<div class="footer">
+  © <span>TEAM SCIENCE • SSC 2028</span><br>
+  Developed by Md Amir Hamza
+</div>
 
-  <!-- Popup -->  
-  <div id="holidayPopup" class="popup">  
-    <div class="popup-box">  
-      <span id="closePopup" class="popup-close"></span>  
-      আজকে স্কুল বন্ধ 🎉  
-    </div>  
-  </div>  
+  </div>  <!-- Holiday Popup -->  <div id="holidayPopup" class="popup">
+    <div class="popup-box">
+      <span id="closePopup" class="popup-close">✕</span>
+      আজকে স্কুল বন্ধ 🎉
+    </div>
+  </div>  <!-- Info Popup -->  <div id="infoPopup" class="popup">
+    <div class="popup-box">  <p class="popup-text">
+    উপরিউক্ত রুটিনটি আমরা বিদ্যালয়ের অফিশিয়াল নোটিশ/সহপাঠীবৃন্দের নিকট হতে সংগ্রহ করেছি। রুটিনটি অনলাইনে আপলোডের সময় আমরা সর্বোচ্চ সতর্কতা অবলম্বন করেছি; তথাপি যদি কোনো প্রকার ত্রুটি আপনাদের দৃষ্টিগোচর হয়, তবে দয়া করে সম্মানিত Developer মহোদয়ের সাথে যোগাযোগ করবেন। তিনি উক্ত ত্রুটি তাৎক্ষণিকভাবে সংশোধনের নিমিত্তে সচেষ্ট হবেন।
+  </p>
 
-  <script>  
+  <button onclick="closeInfo()">ঠিক আছে</button>
+
+</div>
+
+  </div>  <script>
+
     // Accordion Toggle
-    document.querySelectorAll(".accordion-header").forEach(header => {  
-      header.onclick = () => header.parentElement.classList.toggle("active");  
-    });  
-    
-    // ===== PROGRESS =====  
-    const today = new Date();  
-    const day = today.getDay();  
-    let progress = (day >= 0 && day <= 4) ? (day + 1) * 20 : 100;  
-    let text = (day >= 0 && day <= 4) ? progress + "% of week completed" : "Holiday 🎉";  
-    
-    document.getElementById("progressFill").style.width = progress + "%";  
-    document.getElementById("progressText").innerText = text;  
-    
-    // ===== HOLIDAY POPUP =====  
-    if(day === 5 || day === 6){  
-      const popup = document.getElementById("holidayPopup");  
-      popup.style.display = "flex";  
-      setTimeout(() => popup.style.display = "none", 3000);  
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.onclick = () => header.parentElement.classList.toggle("active");
+    });
+
+    // Weekly Progress
+    const today = new Date();
+    const day = today.getDay();
+
+    let progress = (day >= 0 && day <= 4) ? (day + 1) * 20 : 100;
+    let text = (day >= 0 && day <= 4)
+      ? progress + "% of week completed"
+      : "Holiday 🎉";
+
+    document.getElementById("progressFill").style.width = progress + "%";
+    document.getElementById("progressText").innerText = text;
+
+    // Holiday Popup
+    if(day === 5 || day === 6){
+      const popup = document.getElementById("holidayPopup");
+      popup.style.display = "flex";
+      setTimeout(() => popup.style.display = "none", 3000);
     }
 
-    // Close popup on click
     document.getElementById("closePopup").onclick = () => {
       document.getElementById("holidayPopup").style.display = "none";
+    };
+
+    // Info Popup
+    function openInfo() {
+      document.getElementById("infoPopup").style.display = "flex";
     }
-  </script>
-</body>
+
+    function closeInfo() {
+      document.getElementById("infoPopup").style.display = "none";
+    }
+
+  </script></body>
 </html>
